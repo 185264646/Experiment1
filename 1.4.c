@@ -48,6 +48,6 @@ void encrypt(union ch *ch)
 	temp = ch->r4;
 	ch->r4 = ch->r5;
 	ch->r5 = temp;
-	
+	 
 	ch->lo6 <<= ch->hi2;
 }
