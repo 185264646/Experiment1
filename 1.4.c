@@ -25,7 +25,7 @@ int main(void)
 	int len, i;
 	gets((char *)ch);
 	len = strlen(&ch->orig);
-	for (i = 0; i <= len; i++)
+	for (i = 0; i < len; i++)
 		encrypt(&ch[i]);
 	puts(&ch->orig);
 	return 0;
