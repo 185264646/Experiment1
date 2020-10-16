@@ -3,7 +3,7 @@
 #pragma pack (1)
 
 // make x Rotate Left b bits
-#define ROL(x, b) for(int i=0; i<(b); i++) x % 2 ? ((x)=(x)<<1|1) : ((x)<<=1)
+#define ROL(x, b) for(int i=0; i<(b); i++) x % 2 ? (((x)=(x)<<1)|1) : ((x)<<=1)
 
 union ch {
 	char orig;
