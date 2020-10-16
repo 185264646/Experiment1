@@ -47,7 +47,7 @@ int main(void)
 
 void encrypt(union ch *ch)
 {
-	int temp, i;
+	int temp;
 	// Swap bit0 and bit1
 	temp = ch->r0;
 	ch->r0 = ch->r1;
