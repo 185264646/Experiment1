@@ -8,17 +8,17 @@
 union ch {
 	char orig;
 	struct {
-		unsigned int lo6:6;
-		unsigned int hi2:2;
+		unsigned char lo6:6;
+		unsigned char hi2:2;
 	};
 	struct {
-		unsigned int r0:1;
-		unsigned int r1:1;
-		unsigned int r2:1;
-		unsigned int r3:1;
-		unsigned int r4:1;
-		unsigned int r5:1;
-		unsigned int :2;
+		unsigned char r0:1;
+		unsigned char r1:1;
+		unsigned char r2:1;
+		unsigned char r3:1;
+		unsigned char r4:1;
+		unsigned char r5:1;
+		unsigned char :2;
 	};
 };
 
