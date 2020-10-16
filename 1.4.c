@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #pragma pack (1)
+
+// make x Rotate Left b bits
+#define ROL(x, b) for(int i=0; i<(b); i++) x % 2 ? ((x)=(x)<<1|1) : ((x)<<=1)
+
 union ch {
 	char orig;
 	struct {
@@ -49,5 +53,5 @@ void encrypt(union ch *ch)
 	ch->r4 = ch->r5;
 	ch->r5 = temp;
 	 
-	ch->lo6 <<= ch->hi2;
+	ROL(ch->lo6, ch->hi2);
 }
