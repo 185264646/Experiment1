@@ -2,8 +2,18 @@
 #include <string.h>
 #pragma pack (1)
 
-// make x Rotate Left b bits
-#define ROL(x, b) for(int i=0; i<(b); i++) x % 2 ? (((x)=(x)<<1)|1) : ((x)<<=1)
+// Rotate union ch x according to rule.
+#define ROL(x) for(int i=0, temp; i < x->hi2; i++)\
+{\
+	temp = x->r0;\
+	x->r0 = x->r5;\
+	x->r5 = x->r4;\
+	x->r4 = x->r3;\
+	x->r3 = x->r2;\
+	x->r2 = x->r1;\
+	x->r1 = temp;\
+}
+	
 
 union ch {
 	char orig;
@@ -37,7 +47,7 @@ int main(void)
 
 void encrypt(union ch *ch)
 {
-	int temp;
+	int temp, i;
 	// Swap bit0 and bit1
 	temp = ch->r0;
 	ch->r0 = ch->r1;
@@ -52,6 +62,6 @@ void encrypt(union ch *ch)
 	temp = ch->r4;
 	ch->r4 = ch->r5;
 	ch->r5 = temp;
-	 
-	ROL(ch->lo6, ch->hi2);
+	
+	ROL(ch);
 }
