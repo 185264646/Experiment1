@@ -4,7 +4,7 @@ void encrypt(char *c);
 inline void encrypt(char *c)
 {
 	_Bool bit = *c & 0x40;
-	*c = ((*c >> 1 & 0x15) | (*c << 1 & 0x3A)) & 0x3F;
+	*c = ((*c >> 1 & 0x15) | (*c << 1 & 0x2A)) & 0x3F;
 	if (bit)
 	{
 		bit = *c & 0x20;
