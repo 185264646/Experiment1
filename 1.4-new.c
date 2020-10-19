@@ -17,7 +17,7 @@ int main(void)
 {
 	char a[BUFSIZ];
 	int i, len;
-	fgets(a, BUFSIZ - 1, stdin);
+	fgets(a, BUFSIZ, stdin);
 	a[strlen(a) - 1] = '\0';
 	len = strlen(a);
 	for (i = 0; i < len; i++)
